@@ -3,6 +3,11 @@
   "compilerOptions": {
     "rootDir": "./",
     "outDir": "./build",
+    "jsx": "react",
+    "jsxFactory": "Html.createElement",
+    "jsxFragmentFactory": "Html.Fragment",
+    "allowImportingTsExtensions": true,
+    "plugins": [{ "name": "@kitajs/ts-html-plugin" }],
     "paths": {
       "#controllers/*": ["./app/controllers/*.js"],
       "#exceptions/*": ["./app/exceptions/*.js"],
