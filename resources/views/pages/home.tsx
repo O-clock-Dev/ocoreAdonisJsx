@@ -1,20 +1,12 @@
 import { App } from '../components/layouts/app.js'
 import { getFlashMessages } from '../../helpers/flash_messages.ts'
-import { DateTime } from 'luxon'
+import { PostListQueryResult } from '#blog/repositories/post_repository'
 
-type Post = {
-  id: number
-  title: string
-  content: string
-  author: string
-  status: string
-  createdAt: DateTime
-}
 interface HomeProps {
-  posts: Post[]
+  posts: PostListQueryResult
 }
 
-export function Home(props: { posts: posts }) {
+export function Home(props: HomeProps) {
   const flashMessages = getFlashMessages()
   return (
     <App>
