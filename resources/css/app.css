@@ -1,4 +1,46 @@
 body[data-theme-mode=dark] {
   background-color: var(--background-1);
   color: var(--text-1);
+  font-family: Inter, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+#root {
+  display: flex;
+  height: 100vh;
+}
+
+.crumble-menu--expanded {
+  width: 14rem;
+}
+.crumble-menu {
+  border-right: 1px solid var(--border-default);
+  max-height: 100%;
+  max-width: 14rem;
+  padding: 2.5rem 2rem;
+  position: relative;
+  transition: width .1s ease;
+}
+
+main {
+  width: 100%;
+  overflow: auto;
+}
+
+header {
+  background-color: rgb(26, 32, 46);
+  height: 7rem;
+  width: 100%;
+  border-bottom: 1px solid rgb(71, 85, 105);
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+header h2 {
+  color: rgb(251, 253, 254);
+  font-size: 2rem;
+  font-weight: bold;
+  align-self: center;
+  margin-left: 2rem;
 }

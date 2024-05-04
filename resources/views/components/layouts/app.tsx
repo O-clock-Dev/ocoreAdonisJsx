@@ -16,7 +16,9 @@ export function App(props: AppProps) {
           entrypoints={['resources/css/colors.css', 'resources/css/app.css', 'resources/js/app.js']}
         />
       </head>
-      <body data-theme-mode="dark">{children}</body>
+      <body data-theme-mode="dark">
+        <div id="root">{children}</div>
+      </body>
     </html>
   )
 }
