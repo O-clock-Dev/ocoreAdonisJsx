@@ -11,6 +11,7 @@
     "paths": {
       "#app/*": ["./app/*.js"],
       "#blog/*": ["./app/blog/*.js"],
+      "#dashboard/*": ["./app/dashboard/*.js"],
       "#core/*": ["./app/core/*.js"],
       "#mails/*": ["./app/mails/*.js"],
       "#services/*": ["./app/services/*.js"],

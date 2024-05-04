@@ -1,4 +1,4 @@
-import { App } from '../components/layouts/app.js'
+import { OldApp } from '../components/layouts/oldapp.tsx'
 import { getFlashMessages } from '../../helpers/flash_messages.ts'
 import { PostListQueryResult } from '#blog/repositories/post_repository'
 
@@ -9,7 +9,7 @@ interface HomeProps {
 export function Home(props: HomeProps) {
   const flashMessages = getFlashMessages()
   return (
-    <App>
+    <OldApp>
       {flashMessages.has('notification') && (
         <div class={'flash-message ' + flashMessages.get('notification').type}>
           {flashMessages.get('notification').message}
@@ -45,6 +45,6 @@ export function Home(props: HomeProps) {
           })}
         </tbody>
       </table>
-    </App>
+    </OldApp>
   )
 }

@@ -1,11 +1,4 @@
-* {
-  margin: 1rem;
-  padding: 0;
-}
-
-html,
-body {
-  height: 100%;
-  width: 100%;
-  background: lightblue;
+body[data-theme-mode=dark] {
+  background-color: var(--background-1);
+  color: var(--text-1);
 }

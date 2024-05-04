@@ -1,4 +1,4 @@
-import { App } from '../components/layouts/app.js'
+import { OldApp } from '../components/layouts/oldapp.tsx'
 import { route } from '#start/view'
 import { csrfField } from '../../helpers/csrf_field.ts'
 import { getFlashMessages } from '../../helpers/flash_messages.ts'
@@ -6,7 +6,7 @@ import { getFlashMessages } from '../../helpers/flash_messages.ts'
 export function About() {
   const flashMessages = getFlashMessages()
   return (
-    <App>
+    <OldApp>
       <h1>A propos de nous !</h1>
       <p>Voici un petit formulaire pour ajouter un post :</p>
       <form method={'post'} action={route('about-post')}>
@@ -15,7 +15,7 @@ export function About() {
           class={flashMessages.has('inputErrorsBag.title') ? 'is-invalid' : ''}
           type={'text'}
           name={'title'}
-          value={flashMessages.get('title') || 'test'}
+          value={flashMessages.get('title') || ''}
         />
         {flashMessages.has('inputErrorsBag.title') &&
           flashMessages.get('inputErrorsBag.title').map((message: string) => {
@@ -26,7 +26,7 @@ export function About() {
           class={flashMessages.has('inputErrorsBag.content') ? 'is-invalid' : ''}
           type={'text'}
           name={'content'}
-          value={flashMessages.get('content') || 'test'}
+          value={flashMessages.get('content') || ''}
         />
         {flashMessages.has('inputErrorsBag.content') &&
           flashMessages.get('inputErrorsBag.content').map((message: string) => {
@@ -37,7 +37,7 @@ export function About() {
           class={flashMessages.has('inputErrorsBag.author') ? 'is-invalid' : ''}
           type={'text'}
           name={'author'}
-          value={flashMessages.get('author') || 'test'}
+          value={flashMessages.get('author') || ''}
         />
         {flashMessages.has('inputErrorsBag.author') &&
           flashMessages.get('inputErrorsBag.author').map((message: string) => {
@@ -48,7 +48,7 @@ export function About() {
           class={flashMessages.has('inputErrorsBag.status') ? 'is-invalid' : ''}
           type={'text'}
           name={'status'}
-          value={flashMessages.get('status') || 'test'}
+          value={flashMessages.get('status') || ''}
         />
         {flashMessages.has('inputErrorsBag.status') &&
           flashMessages.get('inputErrorsBag.status').map((message: string) => {
@@ -57,6 +57,6 @@ export function About() {
         {csrfField()}
         <button type={'submit'}>Envoyer</button>
       </form>
-    </App>
+    </OldApp>
   )
 }
