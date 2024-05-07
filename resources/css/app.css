@@ -44,3 +44,77 @@ header h2 {
   align-self: center;
   margin-left: 2rem;
 }
+
+main section.main-full {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+main section.main-full > div {
+  width: 60rem;
+}
+
+main section.main-full > div > h2 {
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  font-size: 1.75rem;
+  letter-spacing: -0.59px;
+  margin-bottom: 1.5rem;
+}
+
+.crumble-card {
+  border: 1px solid var(--text-6);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.crumble-no-course-card {
+  align-items: center;
+  color: var(--text-1);
+  display: flex;
+  flex-direction: column;
+  font-size: 1.25rem;
+  font-weight: 500;
+  height: 5rem;
+  justify-content: center;
+  letter-spacing: -.33px;
+  line-height: 150%;
+  margin: 2.75rem auto;
+  width: 100%;
+}
+
+.form-group-divided {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+form label {
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  font-size: 1rem;
+  letter-spacing: -0.18px;
+}
+
+form input {
+  border: 1px solid rgb(71, 85, 105);
+  width: 100%;
+  border-radius: 8px;
+  min-height: 2.5rem;
+  padding: 0.5rem 0.75rem;
+  font-family: Inter;
+  background: rgb(26, 32, 46);
+  color: rgb(251, 253, 254);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  font-size: 1rem;
+  letter-spacing: -0.18px;
+}
