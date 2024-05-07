@@ -1,14 +1,20 @@
 import { App } from '../components/layouts/app.tsx'
+import { Nav } from '../components/layouts/nav.tsx'
+import { Profile } from '../components/layouts/profile.tsx'
 
 export function Dashboard() {
   return (
     <App>
       <div class="crumble-menu crumble-menu--expanded">
-        <h1>O'core</h1>
+        <div class="crumble-menu-logo">
+          <h1>O'Core</h1>
+        </div>
+        <Profile />
+        <Nav />
       </div>
       <main>
         <header>
-          <h2>Welcome to Dashboard</h2>
+          <h2>Dashboard</h2>
         </header>
         <section class="main-full">
           <div>
@@ -29,6 +35,14 @@ export function Dashboard() {
                       <label for="search">Date de fin</label>
                       <input type="date" name="end_date" id="end_date" class="form-control" />
                     </div>
+                  </div>
+                  <div class="crumble-container">
+                    <button
+                      type="submit"
+                      class="crumble-button crumble-button-primary crumble-button--is-full crumble-button-medium"
+                    >
+                      <span class="crumble-button-content">Lancer la recherche</span>
+                    </button>
                   </div>
                 </form>
               </div>

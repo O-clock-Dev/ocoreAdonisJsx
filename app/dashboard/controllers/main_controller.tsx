@@ -1,6 +1,6 @@
 import { HttpContext } from '@adonisjs/core/http'
-import { Dashboard } from '../../../resources/views/pages/dashboard.tsx'
 import { inject } from '@adonisjs/core'
+import { Dashboard } from '../../../resources/views/pages/dashboard.tsx'
 
 @inject()
 export default class MainController {

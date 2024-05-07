@@ -1,5 +1,4 @@
 import type { Children } from '@kitajs/html'
-import { route } from '#start/view'
 import { Vite } from '../../../helpers/asset.ts'
 
 interface AppProps {
