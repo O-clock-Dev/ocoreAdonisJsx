@@ -18,11 +18,13 @@ export function Nav() {
     },
     {
       name: 'Promotions',
-      url: '#',
+      url: '/admin/cohorts',
+      active: request.matchesRoute('admin.cohorts'),
     },
     {
       name: 'Utilisateurs',
-      url: '#',
+      url: '/admin/students',
+      active: request.matchesRoute('admin.students'),
     },
     {
       name: 'Messages',

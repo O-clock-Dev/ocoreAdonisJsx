@@ -1,32 +1,32 @@
-import { CourseListQueryResult } from '#app/admin/repositories/course_repository'
+import { StudentListQueryResult } from '#app/admin/repositories/student_repository'
 import { App } from '../components/layouts/app.tsx'
 import { Nav } from '../components/layouts/nav.tsx'
 import { Profile } from '../components/layouts/profile.tsx'
 import { Table } from '../components/layouts/table.tsx'
 
-interface CoursesProps {
-  courses: CourseListQueryResult
+interface StudentsProps {
+  students: StudentListQueryResult
 }
 
-export function Courses(props: CoursesProps) {
-  const { courses } = props
+export function Students(props: StudentsProps) {
+  const { students } = props
 
   const thitems = [
     {
-      title: 'Nom du cours (BBB)',
+      title: 'Prénom',
       size: `${40}%`,
     },
     {
-      title: 'Date de la session',
+      title: 'Nom',
       size: `${20}%`,
     },
     {
-      title: 'Fin de la session',
+      title: 'Github',
       size: `${20}%`,
     },
     {
-      title: 'Promotion concernée',
-      size: `${18}%`,
+      title: 'Nom de la promo',
+      size: `${20}%`,
     },
     {
       title: '',
@@ -45,17 +45,17 @@ export function Courses(props: CoursesProps) {
       </div>
       <main>
         <header>
-          <h2>Cours enregistrés</h2>
+          <h2>Etudiants enregistrés</h2>
         </header>
         <section class="main-fullwidth">
           <Table thitems={thitems}>
             <>
-              {courses.map((course) => (
+              {students.map((student) => (
                 <tr class="">
-                  <td class="">{course.name}</td>
-                  <td class="">{course.creation_date.toFormat('dd/MM/yyyy HH:mm:ss')}</td>
-                  <td class="">{course.end_date.toFormat('dd/MM/yyyy HH:mm:ss')}</td>
-                  <td class="">{course.cohort.name}</td>
+                  <td class="">{student.firstName}</td>
+                  <td class="">{student.lastName}</td>
+                  <td class="">{student.github}</td>
+                  <td class="">{student.cohort.name}</td>
                   <td class="">
                     <div class="crumble-tooltip-container">
                       <button type="button" class="" aria-haspopup="true" aria-expanded="false">
