@@ -1,4 +1,4 @@
-import { CohortListQueryResult } from '#app/admin/repositories/cohort_repository'
+import { CohortListQueryResult } from '#core/repositories/cohort_repository'
 import { App } from '../components/layouts/app.tsx'
 import { Nav } from '../components/layouts/nav.tsx'
 import { Profile } from '../components/layouts/profile.tsx'

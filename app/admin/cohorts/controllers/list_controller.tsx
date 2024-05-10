@@ -1,6 +1,6 @@
 import { HttpContext } from '@adonisjs/core/http'
 import { inject } from '@adonisjs/core'
-import { CohortRepository } from '#admin/repositories/cohort_repository'
+import { CohortRepository } from '#core/repositories/cohort_repository'
 import { Cohorts } from '../../../../resources/views/pages/cohorts.tsx'
 
 @inject()

@@ -1,12 +1,14 @@
 import { HttpContext } from '@adonisjs/core/http'
 import { inject } from '@adonisjs/core'
 import { Dashboard } from '../../../resources/views/pages/dashboard.tsx'
+import { CohortRepository } from '#app/core/repositories/cohort_repository'
 
 @inject()
 export default class MainController {
-  constructor() {}
+  constructor(private repository: CohortRepository) {}
 
   async index({}: HttpContext) {
-    return <Dashboard />
+    const cohorts = await this.repository.select2All()
+    return <Dashboard cohorts={cohorts} />
   }
 }

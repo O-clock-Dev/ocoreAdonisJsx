@@ -1,4 +1,4 @@
-import { StudentListQueryResult } from '#app/admin/repositories/student_repository'
+import { StudentListQueryResult } from '#core/repositories/student_repository'
 import { App } from '../components/layouts/app.tsx'
 import { Nav } from '../components/layouts/nav.tsx'
 import { Profile } from '../components/layouts/profile.tsx'

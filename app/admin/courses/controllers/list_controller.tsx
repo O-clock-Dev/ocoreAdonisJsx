@@ -1,7 +1,7 @@
 import { HttpContext } from '@adonisjs/core/http'
 import { inject } from '@adonisjs/core'
 import { Courses } from '../../../../resources/views/pages/courses.tsx'
-import { CourseRepository } from '#app/admin/repositories/course_repository'
+import { CourseRepository } from '#core/repositories/course_repository'
 
 @inject()
 export default class AdminCoursesListController {

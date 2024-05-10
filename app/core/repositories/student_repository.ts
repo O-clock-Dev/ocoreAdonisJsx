@@ -1,5 +1,5 @@
 import { ResultOf } from '#types/common'
-import Student from '#admin/models/student'
+import Student from '#core/models/student'
 
 export type StudentListQueryResult = ResultOf<StudentRepository, 'all'>
 

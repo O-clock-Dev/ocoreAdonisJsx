@@ -4,6 +4,7 @@
     "rootDir": "./",
     "outDir": "./build",
     "jsx": "react",
+    "lib": ["esnext", "dom"],
     "jsxFactory": "Html.createElement",
     "jsxFragmentFactory": "Html.Fragment",
     "allowImportingTsExtensions": true,

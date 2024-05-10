@@ -1,5 +1,5 @@
 import { ResultOf } from '#types/common'
-import Course from '#admin/models/course'
+import Course from '#core/models/course'
 
 export type CourseListQueryResult = ResultOf<CourseRepository, 'all'>
 
