@@ -1106,6 +1106,31 @@ table.admin tbody tr td {
   border-radius: 8px;
   overflow: hidden;
   margin-top: 1rem;
+  --data-axes-color: rgb(70, 70, 75);
+  --secondary-axes-color: rgb(70, 70, 75);
+  border: 1px solid rgb(71, 85, 105);
+  padding: 1rem;
+  padding-bottom: 0;
+}
+
+.chart .tooltip {
+  display: block;
+  z-index: 9000;
+}
+
+.chart .badge-tooltip {
+  display: block;
+  background: rgb(26, 32, 46);
+  border-radius: 8px;
+  color: rgb(207, 216, 227);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.09px;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
 }
 
 .chart .charts-css.area tbody tr td:nth-of-type(10n+1)::before, .chart .charts-css.bar tbody tr:nth-of-type(10n+1) td, .chart .charts-css.bar.multiple tbody tr td:nth-of-type(10n+1), .chart .charts-css.column tbody tr:nth-of-type(10n+1) td, .chart .charts-css.column.multiple tbody tr td:nth-of-type(10n+1), .chart .charts-css.line tbody tr td:nth-of-type(10n+1)::before {

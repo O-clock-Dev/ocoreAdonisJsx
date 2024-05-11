@@ -25,6 +25,12 @@ export default class ResultsController {
       currentDateTimestamp,
       tomorrowDateTimestamp
     )
+    const messagesPerDay = await this.messageRepository.countMessagesPerDay(
+      studentId,
+      cohortId,
+      startDate,
+      endDate
+    )
 
     return (
       <Results
@@ -34,6 +40,7 @@ export default class ResultsController {
         currentDate={currentDate}
         studentId={studentId}
         messages={messages}
+        messagesPerDay={messagesPerDay}
       />
     )
   }

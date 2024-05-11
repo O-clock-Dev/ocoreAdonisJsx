@@ -4,7 +4,10 @@ import { App } from '../components/layouts/app.tsx'
 import { Nav } from '../components/layouts/nav.tsx'
 import { Profile } from '../components/layouts/profile.tsx'
 import router from '@adonisjs/core/services/router'
-import { MessageListQueryResult } from '#app/core/repositories/message_repository'
+import {
+  MessageCountQueryResult,
+  MessageListQueryResult,
+} from '#app/core/repositories/message_repository'
 import Chart from '../components/single/chart.tsx'
 
 interface ResultsProps {
@@ -14,10 +17,11 @@ interface ResultsProps {
   currentDate: string
   studentId: string
   messages: MessageListQueryResult
+  messagesPerDay: MessageCountQueryResult
 }
 
 export function Results(props: ResultsProps) {
-  const { cohort, startDate, endDate, currentDate, studentId, messages } = props
+  const { cohort, startDate, endDate, currentDate, studentId, messages, messagesPerDay } = props
 
   return (
     <App>
@@ -62,7 +66,13 @@ export function Results(props: ResultsProps) {
             </ul>
           </div>
           <div class="messages">
-            <Chart />
+            <Chart
+              dataSql={messagesPerDay}
+              startDate={startDate}
+              endDate={endDate}
+              cohortId={cohort.id}
+              studentId={studentId}
+            />
             <h3>{messages?.length} messages</h3>
             {messages.map((message) => (
               <div class="message">
