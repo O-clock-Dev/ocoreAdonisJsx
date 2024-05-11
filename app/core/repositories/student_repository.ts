@@ -5,10 +5,13 @@ export type StudentListQueryResult = ResultOf<StudentRepository, 'all'>
 
 export class StudentRepository {
   async all() {
+    return await Student.query().preload('cohort').limit(50)
+  }
+
+  async findFirstOfCohort(cohortId: string) {
     return await Student.query()
-      .preload('cohort')
-      //.orderBy('firstName', 'asc')
-      //.orderBy('lastName', 'asc')
-      .limit(50)
+      .where('cohort_id', cohortId)
+      .orderBy('firstName', 'asc')
+      .firstOrFail()
   }
 }

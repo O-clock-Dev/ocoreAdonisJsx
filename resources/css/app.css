@@ -532,6 +532,7 @@ main section.main-full {
 main section.main-fullwidth {
   width: 100%;
   overflow: hidden;
+  display: flex;
 }
 
 main section.main-full > div {
@@ -600,6 +601,40 @@ form input {
   line-height: 150%;
   font-size: 1rem;
   letter-spacing: -0.18px;
+}
+
+.is-error {
+  padding: calc(-1px + 0.5rem) calc(-1px + 0.75rem);
+  box-shadow: none;
+}
+
+.is-error, .select2-control.is-error {
+  border: 2px solid rgb(248, 180, 180);
+}
+
+.flash-message.error {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.flash-message.error svg {
+  color: rgb(248, 180, 180);
+  margin-right: 0.3rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+.flash-message.error span {
+  color: rgb(248, 180, 180);
+  width: fit-content;
+  max-width: 30rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  font-size: 0.75rem;
+  letter-spacing: 0.01px;
 }
 
 .select2-container {
@@ -852,7 +887,7 @@ form input {
   background: rgb(39, 48, 63);
 }
 
-table {
+table.admin {
   table-layout: auto;
   background-color: rgb(26, 32, 46);
   width: 100%;
@@ -862,18 +897,18 @@ table {
   border-radius: 10px;
 }
 
-table thead {
+table.admin thead {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background-color: rgb(39, 48, 63);
 }
 
-table > tr:first-of-type > td {
+table.admin > tr:first-of-type > td {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
-.thead-flex {
+table.admin .thead-flex {
   display: flex;
   -webkit-box-pack: justify;
   justify-content: space-between;
@@ -881,7 +916,7 @@ table > tr:first-of-type > td {
   align-items: center;
 }
 
-table span.title {
+table.admin span.title {
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
@@ -932,7 +967,7 @@ table span.title {
   letter-spacing: -0.18px;
 }
 
-table .thead-td-title {
+table.admin .thead-td-title {
   font-size: 1rem;
   width: 100%;
   border-bottom: 1px solid rgb(71, 85, 105);
@@ -940,7 +975,7 @@ table .thead-td-title {
   padding: 0.5rem;
 }
 
-table tr {
+table.admin tr {
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
@@ -949,7 +984,7 @@ table tr {
   color: rgb(207, 216, 227);
 }
 
-table th {
+table.admin th {
   font-size: 1rem;
   position: relative;
   display: table-cell;
@@ -958,7 +993,7 @@ table th {
   padding: 1rem;
 }
 
-table tbody {
+table.admin tbody {
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
@@ -967,11 +1002,11 @@ table tbody {
   width: 100%;
 }
 
-table tbody tr:hover {
+table.admin tbody tr:hover {
   background-color: rgb(39, 48, 63);
 }
 
-table tbody tr td {
+table.admin tbody tr td {
   font-size: 1rem;
   display: table-cell;
   overflow: hidden;
@@ -983,4 +1018,97 @@ table tbody tr td {
 
 .crumble-tooltip-container button svg {
   color: rgb(151, 166, 186);
+}
+
+.results {
+  display: block;
+  justify-content: space-between;
+  height: 100%;
+  overflow: auto;
+}
+
+.badge-block {
+  display: block;
+}
+
+.badge {
+  background: rgb(39, 48, 63);
+  border-radius: 8px;
+  color: rgb(207, 216, 227);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.09px;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.badge-warning {
+  background: rgb(90, 51, 20);
+}
+
+.badge:hover, .badge.active {
+  background: rgb(72, 91, 139);
+}
+
+.badge-warning:hover, .badge-warning.active {
+  background: rgb(155, 104, 63);
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+  width: 80%;
+}
+
+.messages h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: -0.53px;
+  margin-top: 0.5rem;
+}
+
+.message {
+  color: rgb(207, 216, 227);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.18px;
+  margin: 0.3rem 0px;
+
+  /* add border */
+  border: 1px solid rgb(71, 85, 105);
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.message span {
+  color: rgb(151, 166, 186);
+}
+
+.chart {
+  height: 200px;
+  margin-bottom: 5rem;
+}
+
+.chart-hidden .chart-area {
+  display: none;
+}
+
+.chart table.area {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.chart .charts-css.area tbody tr td:nth-of-type(10n+1)::before, .chart .charts-css.bar tbody tr:nth-of-type(10n+1) td, .chart .charts-css.bar.multiple tbody tr td:nth-of-type(10n+1), .chart .charts-css.column tbody tr:nth-of-type(10n+1) td, .chart .charts-css.column.multiple tbody tr td:nth-of-type(10n+1), .chart .charts-css.line tbody tr td:nth-of-type(10n+1)::before {
+  /* create gradient with 2 colors from top to bottom */
+  background: linear-gradient(180deg, rgb(74, 94, 129) 0%, rgb(44, 54, 78) 100%);
 }

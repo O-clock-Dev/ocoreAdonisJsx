@@ -17,7 +17,7 @@ export function Table(props: TableProps) {
           <span></span>
         </div>
       </div>
-      <table class="">
+      <table class="admin">
         <colgroup>
           {thitems.map((thitem) => {
             return <col style={{ width: thitem.size }} />

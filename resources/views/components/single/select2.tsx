@@ -1,8 +1,14 @@
+import clsx from 'clsx'
+import { getFlashMessages } from '../../../helpers/flash_messages.ts'
+
 interface Select2Props {
   options: { value: string; label: string }[]
 }
 
 export function Select2(Props: Select2Props) {
+  const flashMessages = getFlashMessages()
+  const oldCohortId = flashMessages.get('cohort_id') || ''
+  const oldCohort = Props.options.find((option) => option.value === oldCohortId)
   const { options } = Props
   return (
     <div class="select2">
@@ -13,9 +19,14 @@ export function Select2(Props: Select2Props) {
           aria-relevant="additions text"
           class="select2-a11yText"
         ></span>
-        <div class="select2-control">
+        <div
+          class={clsx(
+            'select2-control',
+            flashMessages.has('inputErrorsBag.cohort_id') ? 'is-error' : ''
+          )}
+        >
           <div class="select2-selector">
-            <div class="select2-singleValue"></div>
+            <div class="select2-singleValue">{oldCohort?.label}</div>
           </div>
           <div class="">
             <span class="indicatorSeparator"></span>
@@ -32,7 +43,7 @@ export function Select2(Props: Select2Props) {
             </div>
           </div>
         </div>
-        <input name="promotion" type="hidden" />
+        <input name="cohort_id" type="hidden" value={oldCohort?.value} />
       </div>
       <div class="select2-dropdown">
         <div class="select2-dropdown-menu">

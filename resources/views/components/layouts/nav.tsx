@@ -7,7 +7,7 @@ export function Nav() {
   const searchRoute = {
     name: 'Recherche',
     url: '/dashboard',
-    active: request.matchesRoute('dashboard'),
+    active: request.matchesRoute('dashboard') || request.matchesRoute('dashboard.results'),
   }
 
   const adminRoutes = [

@@ -1,3 +1,15 @@
+// Importation de charts.css
+import 'charts.css'
+// Wait loading of charts.css before displaying the charts
+document.addEventListener('DOMContentLoaded', function () {
+  // Get all the charts
+  const charts = document.querySelectorAll('.chart')
+  // For each chart
+  charts.forEach((chart) => {
+    chart.classList.remove('chart-hidden')
+  })
+})
+
 // Comportement pour le select2
 const select2Control = document.querySelector('.select2-control')
 const select2Dropdown = select2Control.closest('.select2').querySelector('.select2-dropdown')

@@ -1,14 +1,21 @@
 import { CohortListQueryResult } from '#core/repositories/cohort_repository'
+import { route } from '#start/view'
+import { Html } from '@kitajs/html'
+import { csrfField } from '../../helpers/csrf_field.ts'
+import { getFlashMessages } from '../../helpers/flash_messages.ts'
 import { App } from '../components/layouts/app.tsx'
 import { Nav } from '../components/layouts/nav.tsx'
 import { Profile } from '../components/layouts/profile.tsx'
 import { Select2 } from '../components/single/select2.tsx'
+import { FlashMessageError } from '../components/single/flash_message_error.tsx'
+import clsx from 'clsx'
 
 interface DashboardProps {
   cohorts: CohortListQueryResult
 }
 
 export function Dashboard(props: DashboardProps) {
+  const flashMessages = getFlashMessages()
   const { cohorts } = props
   const options: { value: string; label: string }[] = []
   cohorts.map((cohort) => {
@@ -33,21 +40,43 @@ export function Dashboard(props: DashboardProps) {
             <h2>Formulaire de recherche</h2>
             <div class="crumble-card">
               <div class="crumble-no-course-card">
-                <form action="" method="get">
+                <form action={route('dashboard')} method="post">
                   <div class="form-group">
                     <label for="search">Taper le nom de la promo recherchée</label>
                     <Select2 options={options} />
+                    <FlashMessageError inputName="cohort_id" />
                   </div>
                   <div class="form-group-divided">
                     <div class="form-group">
                       <label for="search">Date de début</label>
-                      <input type="date" name="start_date" id="start_date" class="form-control" />
+                      <input
+                        type="date"
+                        name="start_date"
+                        id="start_date"
+                        class={clsx(
+                          'form-control',
+                          flashMessages.has('inputErrorsBag.start_date') ? 'is-error' : ''
+                        )}
+                        value={flashMessages.get('start_date') || ''}
+                      />
+                      <FlashMessageError inputName="start_date" />
                     </div>
                     <div class="form-group">
                       <label for="search">Date de fin</label>
-                      <input type="date" name="end_date" id="end_date" class="form-control" />
+                      <input
+                        type="date"
+                        name="end_date"
+                        id="end_date"
+                        class={clsx(
+                          'form-control',
+                          flashMessages.has('inputErrorsBag.end_date') ? 'is-error' : ''
+                        )}
+                        value={flashMessages.get('end_date') || ''}
+                      />
+                      <FlashMessageError inputName="end_date" />
                     </div>
                   </div>
+                  {csrfField()}
                   <div class="crumble-container">
                     <button
                       type="submit"
