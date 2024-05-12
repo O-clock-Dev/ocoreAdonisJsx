@@ -1,4 +1,4 @@
-import { getFlashMessages } from '../../../helpers/flash_messages.ts'
+import { getFlashMessages } from '#resources/helpers/flash_messages'
 
 export function FlashMessageError(props: { inputName: string }) {
   const { inputName } = props

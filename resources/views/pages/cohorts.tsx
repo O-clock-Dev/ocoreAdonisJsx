@@ -1,8 +1,8 @@
 import { CohortListQueryResult } from '#core/repositories/cohort_repository'
-import { App } from '../components/layouts/app.tsx'
-import { Nav } from '../components/layouts/nav.tsx'
-import { Profile } from '../components/layouts/profile.tsx'
-import { Table } from '../components/layouts/table.tsx'
+import { App } from '#views/components/layouts/app'
+import { Nav } from '#views/components/layouts/nav'
+import { Profile } from '#views/components/layouts/profile'
+import { Table } from '#views/components/layouts/table'
 
 interface CohortsProps {
   cohorts: CohortListQueryResult

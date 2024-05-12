@@ -1,8 +1,8 @@
 import { HttpContext } from '@adonisjs/core/http'
 import { inject } from '@adonisjs/core'
-import { Results } from '../../../resources/views/pages/results.tsx'
-import { CohortRepository } from '#app/core/repositories/cohort_repository'
-import { MessageRepository } from '#app/core/repositories/message_repository'
+import { CohortRepository } from '#core/repositories/cohort_repository'
+import { MessageRepository } from '#core/repositories/message_repository'
+import { Results } from '#views/pages/results'
 
 @inject()
 export default class ResultsController {

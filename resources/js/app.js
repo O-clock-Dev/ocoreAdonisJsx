@@ -1,4 +1,4 @@
-// Importation de charts.css
+// Importation de charts.css (depuis node_modules)
 import 'charts.css'
 // Wait loading of charts.css before displaying the charts
 document.addEventListener('DOMContentLoaded', function () {

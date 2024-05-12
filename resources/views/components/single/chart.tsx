@@ -1,5 +1,5 @@
-import { MessageCountQueryResult } from '#core/repositories/message_repository'
 import router from '@adonisjs/core/services/router'
+import { MessageCountQueryResult } from '#core/repositories/message_repository'
 
 interface ChartProps {
   dataSql: MessageCountQueryResult
@@ -9,7 +9,7 @@ interface ChartProps {
   studentId: string
 }
 
-export default function Chart(props: ChartProps) {
+export function Chart(props: ChartProps) {
   const { dataSql, startDate, endDate, cohortId, studentId } = props
 
   // data for each date in the range of startDate and endDate

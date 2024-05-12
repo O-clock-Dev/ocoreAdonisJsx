@@ -1,3 +1,4 @@
+import { route } from '#start/view'
 import { HttpContext } from '@adonisjs/core/http'
 import clsx from 'clsx'
 
@@ -6,29 +7,25 @@ export function Nav() {
 
   const searchRoute = {
     name: 'Recherche',
-    url: '/dashboard',
+    url: route('dashboard'),
     active: request.matchesRoute('dashboard') || request.matchesRoute('dashboard.results'),
   }
 
   const adminRoutes = [
     {
       name: 'Cours',
-      url: '/admin/courses',
+      url: route('admin.courses'),
       active: request.matchesRoute('admin.courses'),
     },
     {
       name: 'Promotions',
-      url: '/admin/cohorts',
+      url: route('admin.cohorts'),
       active: request.matchesRoute('admin.cohorts'),
     },
     {
       name: 'Utilisateurs',
-      url: '/admin/students',
+      url: route('admin.students'),
       active: request.matchesRoute('admin.students'),
-    },
-    {
-      name: 'Messages',
-      url: '#',
     },
   ]
 

@@ -16,12 +16,12 @@ const fields = {
 /**
  * Validates the post's creation action
  */
-const createSearchValidator = vine.compile(
+const CreateSearchValidator = vine.compile(
   vine.object({
     cohort_id: vine.string().trim().minLength(6),
     start_date: vine.string().trim().minLength(6),
     end_date: vine.string().trim().minLength(6),
   })
 )
-createSearchValidator.messagesProvider = new SimpleMessagesProvider(messages, fields)
-export { createSearchValidator }
+CreateSearchValidator.messagesProvider = new SimpleMessagesProvider(messages, fields)
+export { CreateSearchValidator }

@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { getFlashMessages } from '../../../helpers/flash_messages.ts'
+import { getFlashMessages } from '#resources/helpers/flash_messages'
 
 interface Select2Props {
   options: { value: string; label: string }[]

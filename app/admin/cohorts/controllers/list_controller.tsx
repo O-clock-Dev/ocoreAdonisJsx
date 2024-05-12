@@ -1,7 +1,7 @@
 import { HttpContext } from '@adonisjs/core/http'
 import { inject } from '@adonisjs/core'
 import { CohortRepository } from '#core/repositories/cohort_repository'
-import { Cohorts } from '../../../../resources/views/pages/cohorts.tsx'
+import { Cohorts } from '#views/pages/cohorts'
 
 @inject()
 export default class AdminCohortsListController {

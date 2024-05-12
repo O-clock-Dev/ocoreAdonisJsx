@@ -1,14 +1,14 @@
-import { CohortQueryResult } from '#app/core/repositories/cohort_repository'
-import clsx from 'clsx'
-import { App } from '../components/layouts/app.tsx'
-import { Nav } from '../components/layouts/nav.tsx'
-import { Profile } from '../components/layouts/profile.tsx'
 import router from '@adonisjs/core/services/router'
+import clsx from 'clsx'
+import { CohortQueryResult } from '#app/core/repositories/cohort_repository'
 import {
   MessageCountQueryResult,
   MessageListQueryResult,
-} from '#app/core/repositories/message_repository'
-import Chart from '../components/single/chart.tsx'
+} from '#core/repositories/message_repository'
+import { App } from '#views/components/layouts/app'
+import { Chart } from '#views/components/single/chart'
+import { Nav } from '#views/components/layouts/nav'
+import { Profile } from '#views/components/layouts/profile'
 
 interface ResultsProps {
   cohort: CohortQueryResult

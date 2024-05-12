@@ -1,9 +1,9 @@
 import { HttpContext } from '@adonisjs/core/http'
 import { inject } from '@adonisjs/core'
-import { Dashboard } from '../../../resources/views/pages/dashboard.tsx'
-import { CohortRepository } from '#app/core/repositories/cohort_repository'
-import { createSearchValidator } from '../validators/search.ts'
-import { StudentRepository } from '#app/core/repositories/student_repository'
+import { CohortRepository } from '#core/repositories/cohort_repository'
+import { StudentRepository } from '#core/repositories/student_repository'
+import { CreateSearchValidator } from '#dashboard/validators/search'
+import { Dashboard } from '#views/pages/dashboard'
 
 @inject()
 export default class MainController {
@@ -18,7 +18,7 @@ export default class MainController {
   }
 
   async post({ request, response }: HttpContext) {
-    const payload = await request.validateUsing(createSearchValidator)
+    const payload = await request.validateUsing(CreateSearchValidator)
     const currentDate = payload.start_date
     const firstStudent = await this.studentRepository.findFirstOfCohort(payload.cohort_id)
 

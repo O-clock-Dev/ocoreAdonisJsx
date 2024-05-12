@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon'
-import { BaseModel, belongsTo, column } from '@adonisjs/lucid/orm'
 import type { BelongsTo } from '@adonisjs/lucid/types/relations'
-import Cohort from './cohort.ts'
+import { BaseModel, belongsTo, column } from '@adonisjs/lucid/orm'
+import Cohort from '#core/models/cohort'
 
 export default class Student extends BaseModel {
   static table = 'student'

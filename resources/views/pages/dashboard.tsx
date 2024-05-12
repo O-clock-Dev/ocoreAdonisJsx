@@ -1,14 +1,14 @@
-import { CohortListQueryResult } from '#core/repositories/cohort_repository'
-import { route } from '#start/view'
 import { Html } from '@kitajs/html'
-import { csrfField } from '../../helpers/csrf_field.ts'
-import { getFlashMessages } from '../../helpers/flash_messages.ts'
-import { App } from '../components/layouts/app.tsx'
-import { Nav } from '../components/layouts/nav.tsx'
-import { Profile } from '../components/layouts/profile.tsx'
-import { Select2 } from '../components/single/select2.tsx'
-import { FlashMessageError } from '../components/single/flash_message_error.tsx'
 import clsx from 'clsx'
+import { route } from '#start/view'
+import { CohortListQueryResult } from '#core/repositories/cohort_repository'
+import { csrfField } from '#resources/helpers/csrf_field'
+import { getFlashMessages } from '#resources/helpers/flash_messages'
+import { App } from '#views/components/layouts/app'
+import { FlashMessageError } from '#views/components/single/flash_message_error'
+import { Nav } from '#views/components/layouts/nav'
+import { Profile } from '#views/components/layouts/profile'
+import { Select2 } from '#views/components/single/select2'
 
 interface DashboardProps {
   cohorts: CohortListQueryResult

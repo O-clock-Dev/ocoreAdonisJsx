@@ -1,6 +1,6 @@
 import { HttpContext } from '@adonisjs/core/http'
 import { inject } from '@adonisjs/core'
-import { Courses } from '../../../../resources/views/pages/courses.tsx'
+import { Courses } from '#views/pages/courses'
 import { CourseRepository } from '#core/repositories/course_repository'
 
 @inject()
